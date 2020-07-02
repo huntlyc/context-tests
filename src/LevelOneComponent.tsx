@@ -6,18 +6,14 @@ export default function LevelOneComponent(props: { children: any }) {
     const value = React.useContext(AppContext);
 
     return (
-        <AppContext.Consumer>
-            {(value) => (
-                <>
-                    <p>
-                        Level 1 Component{' '}
-                        <button onClick={() => value.changeAppState('lv1')}>
-                            Change Context (current: {value.appState})
-                        </button>
-                    </p>
-                    {props.children}
-                </>
-            )}
-        </AppContext.Consumer>
+        <>
+            <p>
+                Level 1 Component{' '}
+                <button onClick={() => value.changeAppState('lv1')}>
+                    Change Context (current: {value.appState})
+                </button>
+            </p>
+            {props.children}
+        </>
     );
 }
